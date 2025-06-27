@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- Delivery Address Modal -->
+  <div class="modal fade" id="addressModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="delivery-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="733ea08d-1783-4097-9a3c-c73d1528a91d" />
+            <input type="hidden" name="subject" value="New CloudeBite Order Delivery Details" />
+            <input type="hidden" name="from_name" value="CloudeBite Order" />
+            
+            <div class="modal-header bg-success text-white">
+              <h5 class="modal-title">Enter Delivery Address</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Full Name *</label>
+                <input type="text" name="Full Name" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" name="Phone Number" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-outline-primary" onclick="getCurrentLocation()">Use Current Location</button>
+                <small id="locationStatus" class="text-muted d-block mt-2"></small>
+                <input type="hidden" name="Location Coordinates" id="locationCoordinates">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Pin Code</label>
+                <input type="text" name="Pin Code" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">State</label>
+                <input type="text" name="State" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">City</label>
+                <input type="text" name="City" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">House/Building *</label>
+                <input type="text" name="House/Building" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Road name, Area, Colony *</label>
+                <input type="text" name="Road/Area" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Type of Address</label>
+                <select name="Address Type" class="form-select">
+                  <option value="Home">Home</option>
+                  <option value="Work">Work</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Place Order</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+  </html>
+
+
+
+  
+  <script>
+  // Geolocation & Reverse Geocoding using Google Maps API
+  function getCurrentLocation() {
+    const locationStatus = document.getElementById("locationStatus");
+    const coordinatesInput = document.getElementById("locationCoordinates");
+
+    if (navigator.geolocation) {
+      locationStatus.textContent = "Getting current location...";
+
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        coordinatesInput.value = `${lat}, ${lng}`;
+        locationStatus.textContent = `Coordinates: ${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+
+        // Replace with your own Google Maps Geocoding API key
+        const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`;
+
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          if (data.status === "OK") {
+            const address = data.results[0].address_components;
+
+            const getAddressPart = (type) =>
+              (address.find((comp) => comp.types.includes(type)) || {}).long_name || '';
+
+            document.querySelector('[name="City"]').value = getAddressPart('locality');
+            document.querySelector('[name="State"]').value = getAddressPart('administrative_area_level_1');
+            document.querySelector('[name="Pin Code"]').value = getAddressPart('postal_code');
+            document.querySelector('[name="Road/Area"]').value = getAddressPart('route') + ', ' + getAddressPart('sublocality');
+
+            locationStatus.textContent += " – Address auto-filled.";
+          } else {
+            locationStatus.textContent = "Unable to fetch address details.";
+          }
+        } catch (error) {
+          console.error("Geocoding error:", error);
+          locationStatus.textContent = "Error fetching address.";
+        }
+      }, () => {
+        locationStatus.textContent = "Location permission denied.";
+      });
+    } else {
+      locationStatus.textContent = "Geolocation is not supported by your browser.";
+    }
+  }
+
+  // Simple phone number validation
+  document.querySelector('[name="Phone Number"]').addEventListener("input", function () {
+    const val = this.value.replace(/\D/g, '').slice(0, 10); // only digits
+    this.value = val;
+    if (val.length < 10) {
+      this.setCustomValidity("Enter a valid 10-digit phone number");
+    } else {
+      this.setCustomValidity("");
+    }
+  });
+
+  // Optional: Autofocus first input when modal opens
+  const addressModal = document.getElementById("addressModal");
+  addressModal.addEventListener("shown.bs.modal", () => {
+    document.querySelector('#addressModal input[name="Full Name"]').focus();
+  });
+</script>

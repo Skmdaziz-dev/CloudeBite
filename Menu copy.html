@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Menu</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="bengal kitchen.png" type="image/x-icon">
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- AOS JS -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <!-- Cart Icon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        .card {
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .uniform-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        h1 {
+            color: rgb(247, 246, 242);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .container-fluid {
+            padding: 20px;
+        }
+
+
+        /* Add to cart */
+        #cart-icon:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s;
+        }
+
+
+
+ 
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="container-fluid text-center section py-5 bg-dark text-white">
+        <h1>Trending Menu</h1>
+    </div>
+
+    <!-- Non-Veg Thali Section -->
+    <div class="container-fluid bg-dark text-white">
+        <h3 class="text-center" style="color: rgb(252, 250, 248)">──────────── Non-Veg Thali ────────────</h3>
+        <div class="row">
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="chicken thali.jpeg" alt="Chicken Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Chicken Thali</h4>
+                        <p>3pcs Chicken curry + 1cup Rice + Alu vaja/Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹120/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Chicken Thali" data-price="120" data-image="Chicken Thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="mutton thali.jpeg" alt="Mutton Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Mutton Thali</h4>
+                        <p>2pcs Mutton with gravy + 1cup Rice + Alu vaja/Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹170/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Mutton Thali" data-price="170" data-image="mutton thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="egg thali.jpeg" alt="Egg Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Egg Thali</h4>
+                        <p>2pcs Egg kosha with gravy + 1cup Rice + Alu vaja/Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹80/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Egg Thali" data-price="80" data-image="egg thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Veg Thali Section -->
+    <div class="container-fluid">
+        <h3 class="text-center">──────────── Veg Thali ────────────</h3>
+        <div class="row">
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="veg thali.jpeg" alt="Veg Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Veg Thali</h4>
+                        <p>2 veg Dishes + 1cup Rice + Veg Dal + Alu vaja/Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹80/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Veg Thali" data-price="80" data-image="veg thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="paneer thali.jpeg" alt="Paneer Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Paneer Thali</h4>
+                        <p>4pcs Masala Paneer + 1cup Rice + Veg Dal + Alu vaja/Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹100/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Paneer Thali" data-price="100" data-image="paneer thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="special veg thali.jpeg" alt="Special Veg Thali">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Special Veg Thali</h4>
+                        <p>3 veg Dishes + 1cup Rice + Veg Dal + Alu vaja + Chokha + (Compulsory- Salad, Papar, pickle)</p>
+                        <h4 class="card-title">₹100/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Special Veg Thali" data-price="100" data-image="special veg thali.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biryani Section -->
+    <div class="container-fluid bg-dark text-white">
+        <h3 class="text-center">──────────── Biryani ────────────</h3>
+        <div class="row">
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="chicken beriyani.jpeg" alt="Chicken Biryani">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Chicken Biryani</h4>
+                        <p>Chicken Biryani with Jumbo size Leg piece + (Compulsory- Salad)</p>
+                        <h4 class="card-title">₹180/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Chicken Biryani" data-price="180" data-image="chicken beriyani.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="mutton beriyani.jpeg" alt="Mutton Biryani">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Mutton Biryani</h4>
+                        <p>Mutton Biryani with 180g Mutton pcs + (Compulsory- Salad)</p>
+                        <h4 class="card-title">₹250/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Mutton Biryani" data-price="250" data-image="mutton beriyani.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="zoom-in-up" class="col-sm-4">
+                <div class="card p-3">
+                    <img class="img-thumbnail uniform-img" src="prown beriyani.jpeg" alt="Prawn Biryani">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="color: rgb(239, 146, 6)">Prawn Biryani</h4>
+                        <p>Prawn Biryani filled with Mini prawns, Veges & more + (Compulsory- Salad)</p>
+                        <h4 class="card-title">₹170/-</h4>
+                        <button class="btn btn-warning add-to-cart" data-name="Prawn Biryani" data-price="170" data-image="prown beriyani.jpeg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+
+
+
+   
+
+
+
+
+<!-- MODAL START -->
+<div class="modal fade" id="mod">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Order Summary</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            Name: <input class="form-control" type="text" placeholder="Enter Your Name">
+            <br><br>
+            Contact: <input class="form-control" type="number" placeholder="Enter Your Contact">
+            <br><br>
+            Email: <input class="form-control" type="email" placeholder="Enter Your Email">
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancal</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Cart Icon -->
+  <div id="cart-icon" class="position-fixed bottom-0 end-0 m-4 bg-warning p-3 rounded-circle shadow" style="cursor: pointer; z-index: 1050;">
+    <i class="fas fa-shopping-cart fa-2x text-dark"></i>
+    <span id="cart-count" class="badge bg-danger text-white position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+  </div>
+   
+
+
+   <!-- Add(+) or Decrease(-) Items -->
+   <div class="input-group">
+    <button class="btn btn-outline-secondary" type="button" id="decrease">-</button>
+    <input type="number" class="form-control" id="quantity" value="1" min="1">
+    <button class="btn btn-outline-secondary" type="button" id="increase">+</button>
+    <button class="btn btn-warning" id="addToCart">Add to Cart</button>
+  </div>
+
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="cart-items" class="list-group mb-3"></ul>
+          <h5 class="text-end">Total: ₹ <span id="cart-total">0</span></h5>
+        </div>
+        <div class="modal-footer">
+          <button id="continue-to-payment" class="btn btn-success">Continue</button>
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Payment Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header bg-primary text-white">
+      <h5 class="modal-title" id="paymentModalLabel">Select Payment Method</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+      <form id="payment-form">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="Cash on Delivery" checked>
+          <label class="form-check-label" for="cod">
+            Cash on Delivery
+          </label>
+        </div>
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="upi" value="UPI">
+          <label class="form-check-label" for="upi">
+            UPI (Google Pay, PhonePe, Paytm)
+          </label>
+        </div>
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="netbanking" value="Net Banking">
+          <label class="form-check-label" for="netbanking">
+            Net Banking
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button id="confirmPayment" class="btn btn-success">Confirm Payment</button>
+      <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+</div>
+ 
+
+
+  
+  
+ 
+ 
+
+
+ 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+<!-- Your existing markup + modal for cart -->  
+<!-- Make sure to include Bootstrap CSS & JS if not already included -->  
+<!-- For simplicity, here's just the script with necessary modifications -->  
+
+<!-- Add this inside your existing cart modal after listing items, for example -->  
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">  
+  <div class="modal-dialog modal-lg">  
+    <div class="modal-content">  
+      <div class="modal-header">  
+        <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>  
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
+      </div>  
+      <div class="modal-body">  
+        <ul id="cart-items" class="list-group mb-3"></ul>  
+        <div class="d-flex justify-content-between">  
+          <h5>Total: ₹<span id="cart-total">0</span></h5>  
+        </div>  
+        <!-- Buy Now Button -->  
+        <button id="buy-all" class="btn btn-success w-100">Buy All Items</button>  
+      </div>  
+    </div>  
+  </div>  
+</div>  
+
+<!-- Your existing script -->  
+<script>  
+let cart = [];  
+
+const cartIcon = document.getElementById('cart-icon');  
+const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));  
+const cartItemsList = document.getElementById('cart-items');  
+const cartCount = document.getElementById('cart-count');  
+const cartTotal = document.getElementById('cart-total');  
+
+document.querySelectorAll('.add-to-cart').forEach(button => {  
+  // Create custom quantity control  
+  const cardBody = button.parentElement;  
+  const quantityWrapper = document.createElement('div');  
+  quantityWrapper.className = 'input-group justify-content-center my-2';  
+  quantityWrapper.innerHTML = `  
+    <button class="btn btn-sm btn-outline-secondary decrease">-</button>  
+    <input type="number" class="form-control text-center quantity-input" value="1" min="1" style="max-width: 60px;">  
+    <button class="btn btn-sm btn-outline-secondary increase">+</button>  
+  `;  
+  cardBody.insertBefore(quantityWrapper, button);  
+
+  const decreaseBtn = quantityWrapper.querySelector('.decrease');  
+  const increaseBtn = quantityWrapper.querySelector('.increase');  
+  const qtyInput = quantityWrapper.querySelector('.quantity-input');  
+
+  increaseBtn.addEventListener('click', () => {  
+    qtyInput.value = parseInt(qtyInput.value) + 1;  
+  });  
+
+  decreaseBtn.addEventListener('click', () => {  
+    if (parseInt(qtyInput.value) > 1) {  
+      qtyInput.value = parseInt(qtyInput.value) - 1;  
+    }  
+  });  
+
+  // Add to cart  
+  button.addEventListener('click', () => {  
+    const name = button.dataset.name;  
+    const price = parseInt(button.dataset.price);  
+    const image = button.dataset.image;  
+    const quantity = parseInt(qtyInput.value);  
+
+    const existingItem = cart.find(item => item.name === name);  
+    if (existingItem) {  
+      existingItem.quantity += quantity;  
+    } else {  
+      cart.push({ name, price, image, quantity });  
+    }  
+
+    updateCartUI();  
+  });  
+});  
+
+// Show cart modal  
+cartIcon.addEventListener('click', () => {  
+  updateCartUI();  
+  cartModal.show();  
+});  
+
+// Update cart UI  
+function updateCartUI() {  
+  cartItemsList.innerHTML = '';  
+  let total = 0;  
+  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);  
+
+  cart.forEach((item, index) => {  
+    const li = document.createElement('li');  
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';  
+    li.innerHTML = `  
+      <div class="d-flex align-items-center">  
+        <img src="${item.image}" alt="${item.name}" width="60" height="60" class="rounded me-3" />  
+        <div>  
+          <strong>${item.name}</strong><br>  
+          ₹${item.price} x ${item.quantity}  
+        </div>  
+      </div>  
+      <div>  
+        ₹${item.price * item.quantity}  
+        <button class="btn btn-sm btn-danger ms-3" onclick="removeFromCart(${index})">×</button>  
+      </div>  
+      <div>  
+        <button class="btn btn-primary btn-sm mt-2 buy-item" data-index="${index}">Buy</button>  
+      </div>  
+    `;  
+    cartItemsList.appendChild(li);  
+    total += item.price * item.quantity;  
+  });  
+
+  cartTotal.textContent = total;  
+
+  // Add event listeners for "Buy" buttons  
+  document.querySelectorAll('.buy-item').forEach(btn => {  
+    btn.addEventListener('click', () => {  
+      const index = parseInt(btn.dataset.index);  
+      buySingleItem(index);  
+    });  
+  });  
+}  
+
+// Remove item from cart  
+function removeFromCart(index) {  
+  cart.splice(index, 1);  
+  updateCartUI();  
+}  
+
+// Buy single item (simulate payment)  
+function buySingleItem(index) {  
+  const item = cart[index];  
+  alert(`Purchasing ${item.name} for ₹${item.price * item.quantity}`);  
+  // Remove item after purchase  
+  cart.splice(index, 1);  
+  updateCartUI();  
+}  
+
+// Buy all items  
+document.getElementById('buy-all').addEventListener('click', () => {  
+  if (cart.length === 0) {  
+    alert("Your cart is empty!");  
+    return;  
+  }  
+  let totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);  
+  alert(`Total payment of ₹${totalAmount} for all items.`);  
+  cart = []; // clear cart after purchase  
+  updateCartUI();  
+});  
+
+
+
+
+
+
+// Payments Method(Gpay, Phonepay, paytm) 
+  const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+  let pendingPurchase = null; // holds either single item or 'all'
+
+  function showPaymentOptions(callback) {
+    pendingPurchase = callback;
+    paymentModal.show();
+  }
+
+  document.getElementById('confirmPayment').addEventListener('click', () => {
+    const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+    if (pendingPurchase) {
+      pendingPurchase(selectedMethod); // call stored function with selected method
+      paymentModal.hide();
+    }
+  });
+
+  // Modified buySingleItem function
+  function buySingleItem(index) {
+    const item = cart[index];
+    showPaymentOptions((method) => {
+      alert(`You chose ${method} to buy ${item.name} for ₹${item.price * item.quantity}`);
+      cart.splice(index, 1);
+      updateCartUI();
+    });
+  }
+
+  // Modified Buy All Items handler
+  document.getElementById('buy-all').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    showPaymentOptions((method) => {
+      alert(`You chose ${method}. Total payment of ₹${totalAmount} for all items.`);
+      cart = [];
+      updateCartUI();
+    });
+  });
+
+
+
+
+
+  document.getElementById('continue-to-payment').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  showPaymentOptions((method) => {
+    alert(`You chose ${method}. Total payment of ₹${totalAmount} for all items.`);
+    cart = [];
+    updateCartUI();
+    cartModal.hide()
+  });
+});
+
+</script>
+
+
+
+
+
+     
+
+
+<script>
+  AOS.init({
+    duration: 2000,
+    once: true,
+  });
+</script>
